@@ -7,41 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <h1>Advanced Calculator</h1>
-        <div class="inputs">
-            <input type="number" id="num1" placeholder="Enter first number">
-            <input type="number" id="num2" placeholder="Enter second number">
-            <select id="operation1">
-                <option value="add">+</option>
-                <option value="subtract">-</option>
-                <option value="multiply">*</option>
-                <option value="divide">/</option>
-            </select>
-            <input type="number" id="num3" placeholder="Enter third number">
-            <input type="number" id="num4" placeholder="Enter fourth number">
-            <select id="operation2">
-                <option value="add">+</option>
-                <option value="subtract">-</option>
-                <option value="multiply">*</option>
-                <option value="divide">/</option>
-            </select>
-        </div><iframe src="https://app.calconic.com/api/embed/calculator/66599789dd5b3c0029ff7f7b" sandbox="allow-same-origin allow-forms allow-scripts allow-top-navigation allow-popups-to-escape-sandbox allow-popups" title="Calconic_ Calculator" name="Calconic_ Calculator" height="507px" scrolling="no" style="width: 100%; border: 0; outline: none;"></iframe>
-<script>
-  (function() {
-    window.addEventListener("message",function(t){
-      var e="https://www.paypalobjects.com/api/checkout.4.0.141.js";
-      if(!document.querySelector('script[src="'+e+'"]')&&t.data&&"LOAD_PAYPAL"===t.data.action){
-      var a=document.createElement("script");a.src=e,a.async=!0,a.dataset={paypalCheckout:!0,noBridge:!0,state:"ppxo_meta",env:"production"},document.body.append(a)
-      }if(t.data&&"CALCONIC_UPDATE_HEIGHT"===t.data.action){
-      var l=document.querySelectorAll('iframe[src="https://app.calconic.com/api/embed/calculator/'+t.data.payload.id+'"]');
-      for (let i in [...l]) {if (l[i]){l[i].height=t.data.payload.height}};}
-    });
-  })();
-</script>
-        <button onclick="calculateResult()">Calculate</button>
-        <div class="result" id="result"></div>
-    </div>
-    <script src="script.js"></script>
+<div class="calconic-calculator"  data-calculatorid="66599789dd5b3c0029ff7f7b"></div>
+    <script>
+          (function() { var qs,j,q,s,d=document, gi=d.getElementById,
+  ce=d.createElement, gt=d.getElementsByTagName,
+  id="calconic_", b="https://cdn.calconic.com/static/js/";
+  if(!gi.call(d,id)) { j=ce.call(d,"script"); j.id=id; j.type="text/javascript"; j.async=true;
+  j.dataset.calconic=true;
+  j.src=b+"calconic.min.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(j,q) }
+})();
+        </script>    
 </body>
+
 </html>
