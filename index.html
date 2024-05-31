@@ -26,7 +26,19 @@
                 <option value="multiply">*</option>
                 <option value="divide">/</option>
             </select>
-        </div>
+        </div><iframe src="https://app.calconic.com/api/embed/calculator/66599789dd5b3c0029ff7f7b" sandbox="allow-same-origin allow-forms allow-scripts allow-top-navigation allow-popups-to-escape-sandbox allow-popups" title="Calconic_ Calculator" name="Calconic_ Calculator" height="507px" scrolling="no" style="width: 100%; border: 0; outline: none;"></iframe>
+<script>
+  (function() {
+    window.addEventListener("message",function(t){
+      var e="https://www.paypalobjects.com/api/checkout.4.0.141.js";
+      if(!document.querySelector('script[src="'+e+'"]')&&t.data&&"LOAD_PAYPAL"===t.data.action){
+      var a=document.createElement("script");a.src=e,a.async=!0,a.dataset={paypalCheckout:!0,noBridge:!0,state:"ppxo_meta",env:"production"},document.body.append(a)
+      }if(t.data&&"CALCONIC_UPDATE_HEIGHT"===t.data.action){
+      var l=document.querySelectorAll('iframe[src="https://app.calconic.com/api/embed/calculator/'+t.data.payload.id+'"]');
+      for (let i in [...l]) {if (l[i]){l[i].height=t.data.payload.height}};}
+    });
+  })();
+</script>
         <button onclick="calculateResult()">Calculate</button>
         <div class="result" id="result"></div>
     </div>
